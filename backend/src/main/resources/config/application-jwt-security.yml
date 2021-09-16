@@ -1,0 +1,52 @@
+#security.jwt:
+#  token:
+#    expiration: 600000
+#    secret-key: secret-key-for-encryption
+#    roles-key: roles
+#    header-name: Authorization
+#    password-strength: 7
+#    prefix: Bearer
+#  roles:
+#    -
+#      name: ROLE_ADMIN
+#      description: Super Admin
+#    -
+#      name: ROLE_USER
+#      description: Simple User
+#  users:
+#    -
+#      username: root
+#      password: root
+#      roles:
+#        - ROLE_ADMIN
+#        - ROLE_USER
+
+security.jwt:
+  token:
+    expiration: 3600000
+  roles:
+    - name: Viewer
+      description: View user
+      privileges:
+        - ROLE_VIEWER_PRIVILEGE
+    - name: Editor
+      description: Editor user
+      privileges:
+        - ROLE_CHANGE_PRIVILEGE
+        - ROLE_VIEWER_PRIVILEGE
+  #  users:
+  #    - username: viewer
+  #      password: viewer
+  #      roles:
+  #        - Viewer
+  #    - username: editor
+  #      password: editor
+  #      roles:
+  #        - Editor
+  privileges:
+    - name: ROLE_EXECUTOR_PRIVILEGE
+      description: "Executor privilege"
+    - name: ROLE_VIEWER_PRIVILEGE
+      description: "View privilege"
+    - name: ROLE_ACTIVITY_PRIVILEGE
+      description: "Activity log privilege"

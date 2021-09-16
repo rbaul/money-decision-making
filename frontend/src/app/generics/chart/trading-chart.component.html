@@ -1,0 +1,47 @@
+<button (click)="updateOptions( '1m' )"
+        [class.active]="activeOptionButton=='1m'">
+  1M
+</button>
+<button (click)="updateOptions( '6m' )"
+        [class.active]="activeOptionButton=='6m'">
+  6M
+</button>
+<button (click)="updateOptions( '1y' )"
+        [class.active]="activeOptionButton=='1y'">
+  1Y
+</button>
+<button (click)="updateOptions( '5y' )"
+        [class.active]="activeOptionButton=='5y'">
+  5Y
+</button>
+<apx-chart #chart
+           [chart]="chartOptions?.chart"
+           [annotations]="chartOptions?.annotations"
+           [dataLabels]="chartOptions?.dataLabels"
+           [series]="chartOptions?.series"
+           [fill]="chartOptions?.fill"
+           [tooltip]="chartOptions?.tooltip"
+           [xaxis]="chartOptions?.xaxis"
+></apx-chart>
+
+<!--<apx-chart #chart-->
+<!--           [chart]="chartOptions?.chart"-->
+<!--           [annotations]="chartOptions?.annotations"-->
+<!--           [colors]="chartOptions?.colors"-->
+<!--           [dataLabels]="chartOptions?.dataLabels"-->
+<!--           [series]="chartOptions?.series"-->
+<!--           [stroke]="chartOptions?.states"-->
+<!--           [labels]="chartOptions?.labels"-->
+<!--           [legend]="chartOptions?.legend"-->
+<!--           [fill]="chartOptions?.fill"-->
+<!--           [tooltip]="chartOptions?.tooltip"-->
+<!--           [plotOptions]="chartOptions?.plotOptions"-->
+<!--           [responsive]="chartOptions?.responsive"-->
+<!--           [xaxis]="chartOptions?.xaxis"-->
+<!--           [yaxis]="chartOptions?.yaxis"-->
+<!--           [grid]="chartOptions?.grid"-->
+<!--           [states]="chartOptions?.states"-->
+<!--           [title]="chartOptions?.title"-->
+<!--           [subtitle]="chartOptions?.subtitle"-->
+<!--           [theme]="chartOptions?.theme"-->
+<!--&gt;</apx-chart>-->

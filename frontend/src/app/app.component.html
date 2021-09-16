@@ -1,0 +1,7 @@
+<div *ngIf="!isLoggedIn$; else other">
+  <router-outlet></router-outlet>
+</div>
+
+<ng-template #other>
+  <app-navigation title="{{title}}" [navList]="navList"></app-navigation>
+</ng-template>

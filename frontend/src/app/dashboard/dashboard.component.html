@@ -1,0 +1,35 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-form-field class="example-chip-list" appearance="fill">
+    <mat-label>Select relevant indicators</mat-label>
+    <mat-select [formControl]="supportIndicatorsFormControl" multiple>
+      <mat-option *ngFor="let indicator of supportIndicators" [value]="indicator">{{indicator.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="spinner-container" *ngIf="dataLoading$ | async">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <mat-grid-list cols="3" rowHeight="340px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.name}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item (click)="expendIndicator(card)">Expand</button>
+              <button mat-menu-item (click)="removeIndicator(card.id)">Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <app-trading-chart [data]="card.data" (activeRangeChanged)="onActiveRangeChange(card, $event)"></app-trading-chart>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,36 @@
+mat-card {
+  width: 560px;
+  max-width: 560px;
+  margin: 2em auto;
+  text-align: center;
+  // background-color: transparent;
+  // background-color:  lightgrey;
+  background: rgba(225, 225, 225, 0.95);
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  background: {
+    // image: url(https://marcbruederlin.github.io/particles.js/img/background.jpg);
+    image: url(../../../assets/bg.jpg);
+    position: center;
+    repeat: no-repeat;
+    color: black;
+    size: cover;
+  }
+}
+
+.login-container {
+  height: 100vh;
+  position: relative;
+}
+
+.full-width-input {
+  width: 80%;
+  font-size: 1rem;
+}

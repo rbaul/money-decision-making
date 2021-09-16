@@ -1,0 +1,5 @@
+@use '../../node_modules/@angular/material/index' as mat;
+
+$primary-color: mat.get-color-from-palette(mat.$indigo-palette, 500);
+
+$unselect-text-color: mat.get-color-from-palette(mat.$grey-palette, 400);
